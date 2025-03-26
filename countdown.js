@@ -94,6 +94,23 @@ function showExpired() {
 
     const alertSound = new Audio('data:audio/wav;base64,//uQRAAAAWMSLwUIYAAsYkXgoQwAEaYLWfkWgAI0wWs/ItAAAGDgYtAgAyN+QWaAAihwMWm4G8QQRDiMcCBcH3Cc+CDv/7xA4Tvh9Rz/y8QADBwMWgQAZG/ILNAARQ4GLTcDeIIIhxGOBAuD7hOfBB3/94gcJ3w+o5/5eIAIAAAVwWgQAVQ2ORaIQwEMAJiDg95G4nQL7mQVWI6GwRcfsZAcsKkJvxgxEjzFUgfHoSQ9Qq7KNwqHwuB13MA4a1q/DmBrHgPcmjiGoh//EwC5nGPEmS4RcfkVKOhJf+WOgoxJclFz3kgn//dBA+ya1GhurNn8zb//9NNutNuhz31f////9vt///z+IdAEAAAK4LQIAKobHItEIYCGAExBwe8jcToF9zIKrEdDYIuP2MgOWFSE34wYiR5iqQPj0JIeoVdlG4VD4XA67mAcNa1fhzA1jwHuTRxDUQ//iYBczjHiTJcIuPyKlHQkv/LHQUYkuSi57yQT//uggfZNajQ3Vmz+Zt//+mm3Wm3Q576v////+32///5/EOgAAADVghQAAAAA==');
     alertSound.play();
+
+    const parkingData = JSON.parse(localStorage.getItem('parkingData'));
+    const spotNumber = document.getElementById('spotNumber').textContent;
+    const spotIndex = parkingData.findIndex(spot => spot.number === spotNumber);
+    
+    if (spotIndex !== -1) {
+        parkingData[spotIndex].isOccupied = false;
+        localStorage.setItem('parkingData', JSON.stringify(parkingData));
+    }
+
+    if (confirm('Would you like to review your parking experience?')) {
+        sessionStorage.setItem('reviewSpot', spotNumber);
+        window.location.href = 'parking.html?showReview=true';
+    } else {
+        sessionStorage.removeItem('bookingDetails');
+        window.location.href = 'parking.html';
+    }
 }
 
 function endParking() {
