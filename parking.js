@@ -26,7 +26,7 @@ let currentReviewSpot = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     if (!sessionStorage.getItem('isLoggedIn')) {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
         return;
     }
 
@@ -45,7 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCounts();
     handleStarRating();
 
-    // Close modals when clicking outside
+    // Check for review prompt
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('showReview') === 'true') {
+        const spotNumber = sessionStorage.getItem('reviewSpot');
+        if (spotNumber) {
+            showReviewModal(spotNumber);
+            sessionStorage.removeItem('reviewSpot');
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    }
+
     window.onclick = function(event) {
         const reviewModal = document.getElementById('reviewModal');
         const historyModal = document.getElementById('historyModal');
