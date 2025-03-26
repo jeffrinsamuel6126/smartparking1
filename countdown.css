@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f6fa;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.countdown-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.booking-details {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.booking-details p {
+    margin: 12px 0;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #ecf0f1;
+    border-radius: 6px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #2ecc71;
+    transition: width 0.3s ease;
+}
+
+.progress.warning {
+    background-color: #f1c40f;
+}
+
+.progress.critical {
+    background-color: #e74c3c;
+}
+
+.progress.expired {
+    background-color: #95a5a6;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+    background: #2c3e50;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.time-section {
+    text-align: center;
+}
+
+.time-section span {
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    display: block;
+}
+
+.time-section p {
+    color: #bdc3c7;
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.status-message {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.status-message.warning {
+    background-color: #f1c40f;
+    color: #000;
+}
+
+.status-message.critical {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.status-message.expired {
+    background-color: #95a5a6;
+    color: #fff;
+}
+
+.end-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.end-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    .countdown-box {
+        padding: 20px;
+    }
+
+    .timer {
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .time-section span {
+        font-size: 40px;
+    }
+
+    .time-section p {
+        font-size: 12px;
+    }
+}

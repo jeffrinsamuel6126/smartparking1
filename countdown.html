@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking - Countdown</title>
+    <link rel="stylesheet" href="countdown.css">
+</head>
+<body>
+    <div class="container">
+        <div class="countdown-box">
+            <h2>Parking Timer</h2>
+            <div class="booking-details">
+                <p><strong>Spot Number:</strong> <span id="spotNumber"></span></p>
+                <p><strong>Vehicle Number:</strong> <span id="vehicleNumber"></span></p>
+                <p><strong>Duration:</strong> <span id="duration"></span> hours</p>
+                <p><strong>Amount Paid:</strong> ₹<span id="amountPaid"></span></p>
+            </div>
+            
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+
+            <div id="statusMessage" class="status-message"></div>
+
+            <div class="timer">
+                <div class="time-section">
+                    <span id="hours">00</span>
+                    <p>Hours</p>
+                </div>
+                <div class="time-section">
+                    <span id="minutes">00</span>
+                    <p>Minutes</p>
+                </div>
+                <div class="time-section">
+                    <span id="seconds">00</span>
+                    <p>Seconds</p>
+                </div>
+            </div>
+
+            <button onclick="endParking()" class="end-btn">End Parking</button>
+        </div>
+    </div>
+    <script src="countdown.js"></script>
+</body>
+</html>

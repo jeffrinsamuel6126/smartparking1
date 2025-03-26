@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Smart Parking Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="vehicleNumber">Vehicle Number</label>
+                    <input type="text" id="vehicleNumber" required placeholder="Enter Vehicle Number">
+                </div>
+                <div class="form-group">
+                    <label for="licenseNumber">License Number</label>
+                    <input type="password" id="licenseNumber" required placeholder="Enter License Number">
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div id="error-message" class="error-message"></div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

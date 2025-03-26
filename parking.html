@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking Management</title>
+    <link rel="stylesheet" href="parking.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="top-nav">
+            <div class="welcome-message"></div>
+            <div class="nav-buttons">
+                <button onclick="showHistory()" class="history-btn">View History</button>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </nav>
+        <h1>Smart Parking System</h1>
+        <div class="summary">
+            <div class="stat">
+                <span id="available-count">0</span>
+                <p>Available</p>
+            </div>
+            <div class="stat">
+                <span id="occupied-count">0</span>
+                <p>Occupied</p>
+            </div>
+        </div>
+        <div class="parking-lot">
+            <div class="entrance">ENTRANCE</div>
+            <div class="parking-area">
+                <div class="row-label">Row A</div>
+                <div class="parking-row" id="row-a"></div>
+                <div class="aisle"></div>
+                <div class="row-label">Row B</div>
+                <div class="parking-row" id="row-b"></div>
+                <div class="aisle"></div>
+                <div class="row-label">Row C</div>
+                <div class="parking-row" id="row-c"></div>
+            </div>
+            <div class="exit">EXIT</div>
+        </div>
+    </div>
+
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <h3>Review Parking Spot</h3>
+            <div class="spot-details">
+                <p>Spot Number: <span id="reviewSpotNumber"></span></p>
+            </div>
+            <div class="rating">
+                <span class="star" data-rating="1">★</span>
+                <span class="star" data-rating="2">★</span>
+                <span class="star" data-rating="3">★</span>
+                <span class="star" data-rating="4">★</span>
+                <span class="star" data-rating="5">★</span>
+            </div>
+            <textarea id="reviewComment" placeholder="Write your review here..."></textarea>
+            <div class="modal-buttons">
+                <button onclick="submitReview()" class="submit-btn">Submit Review</button>
+                <button onclick="closeReviewModal()" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="historyModal" class="modal">
+        <div class="modal-content history-content">
+            <h3>Parking History</h3>
+            <div id="historyList" class="history-list">
+                <!-- History items will be inserted here -->
+            </div>
+            <button onclick="closeHistoryModal()" class="cancel-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="parking.js"></script>
+</body>
+</html>
